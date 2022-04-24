@@ -7,7 +7,7 @@ let counter = 0;
 
 //pipes animaiton
 hole.addEventListener('animationiteration', () => {
-    let random = -((Math.random() * 300) + 150);
+    let random = -((Math.random() * 400) + 150);
     hole.style.top = random + "px";
     counter++;
 });
@@ -20,7 +20,7 @@ setInterval(function () {
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     let cTop = -(500 - characterTop);
-    if ((characterTop > 480) || ((blockLeft < 50) && (blockLeft > -20) && ((cTop < holeTop) || (cTop > holeTop + 120)))) {
+    if ((characterTop > 460) || ((blockLeft < 50) && (blockLeft > -20) && ((cTop < holeTop) || (cTop > holeTop + 120)))) {
         alert("You Are Dead Homie! Score: " + (counter - 1));
         character.style.top = 100 + "px";
         counter = 0;
