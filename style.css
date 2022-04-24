@@ -6,7 +6,7 @@
 #game{
 	width: 600px;
 	height: 500px;
-	border: 1px solid black;
+	border: 20px solid black;
 	margin: auto;
 	overflow: hidden;
 	background-color: skyblue;
