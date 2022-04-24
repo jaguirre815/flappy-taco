@@ -21,7 +21,7 @@ setInterval(function () {
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     let cTop = -(500 - characterTop);
     if ((characterTop > 480) || ((blockLeft < 50) && (blockLeft > -20) && ((cTop < holeTop) || (cTop > holeTop + 120)))) {
-        alert("You Die Homie! Score: " + (counter - 1));
+        alert("You Are Dead Homie! Score: " + (counter - 1));
         character.style.top = 100 + "px";
         counter = 0;
     }
@@ -45,4 +45,4 @@ function jump() {
 }                    
 
 
-//testing  dd more
+
