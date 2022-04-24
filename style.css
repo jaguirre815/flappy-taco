@@ -20,7 +20,7 @@
 	border: 1px solid black;
 	position: relative;
 	left: 400px;
-	animation: block 3s infinite linear;
+	animation: block 4s infinite linear;
 }
 
 @keyframes block{
@@ -35,7 +35,7 @@
 	position: relative;
 	left: 400px;
 	top: -500px;
-	animation: block 3s infinite linear;
+	animation: block 4s infinite linear;
 }
 
 #character{
