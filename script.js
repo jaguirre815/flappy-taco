@@ -7,7 +7,7 @@ let counter = 0;
 
 //pipes animaiton
 hole.addEventListener('animationiteration', () => {
-    let random = -((Math.random() * 500) + 100);
+    let random = -((Math.random() * 300) + 150);
     hole.style.top = random + "px";
     counter++;
 });
@@ -21,13 +21,13 @@ setInterval(function () {
 
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
-    let cTop = -(450 - characterTop);
+    let cTop = -(500 - characterTop);
 
 
-    if ((characterTop > 400) || ((blockLeft < 5) && (blockLeft > -5) && ((cTop < holeTop) || (cTop > holeTop + 500)))) {
-        //alert("You Are Dead Homie! Score: " + (counter - 1));
-        character.style.top = 20 + "px";
-        counter = 0;
+    if ((characterTop > 500) || ((blockLeft < 90) && (blockLeft > -50) && ((cTop < holeTop) || (cTop > holeTop + 150)))) {
+        alert("You Are Dead Homie! Score: " + (counter - 1));   
+        character.style.top = 100 + "px";
+        counter = 0;    
     }
 }, 10  );
 
@@ -45,7 +45,7 @@ function jump() {
             jumpCount = 0;
         }
         jumpCount++;
-    }, 5   );
+    }, 10      );
 }                    
 
                  
