@@ -1,4 +1,4 @@
-//variables
+   
 let block = document.getElementById("block");
 let hole = document.getElementById("hole");
 let character = document.getElementById("character");
@@ -55,6 +55,13 @@ function jump() {
 function displayScore() {
     document.getElementById('score').innerText = counter;  
 }
-                 
+
+let audio = new Audio('audio/Intro-Theme.mp3');
+audio.play();
+
+
+
+
+
 
 
