@@ -10,7 +10,9 @@ hole.addEventListener('animationiteration', () => {
     let random = -((Math.random() * 300) + 150);
     hole.style.top = random + "px";
     counter++;
+    displayScore();
 });
+
 //gravity
 setInterval(function () {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
@@ -23,11 +25,14 @@ setInterval(function () {
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     let cTop = -(500 - characterTop);
 
+    
 
-    if ((characterTop > 500) || ((blockLeft < 90) && (blockLeft > -50) && ((cTop < holeTop) || (cTop > holeTop + 150)))) {
-        alert("You Are Dead Homie! Score: " + (counter - 1));   
+
+    if ((characterTop > 500) || ((blockLeft < 90) && (blockLeft > 10) && ((cTop < holeTop - 45) || (cTop > holeTop + 125)))) {
+        alert("You Are Dead Homie!");   
         character.style.top = 100 + "px";
-        counter = 0;    
+        counter = 0;
+        displayScore();    
     }
 }, 10  );
 
@@ -47,7 +52,9 @@ function jump() {
         jumpCount++;
     }, 10      );
 }                    
-
+function displayScore() {
+    document.getElementById('score').innerText = counter;  
+}
                  
 
 

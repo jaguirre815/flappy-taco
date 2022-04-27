@@ -30,7 +30,7 @@
 
 #hole{
 	width: 52px;
-	height: 150px;
+	height: 200px;
 	background-color: skyblue;
 	position: relative;
 	left: 400px;
@@ -43,5 +43,26 @@
 	height: 150px;
 	position: absolute;
 	top: 50px;
+	
+}
+
+#score{
+	width: 60px;
+	height: 30px;
+	position: absolute;
+	top: 10px;
+	text-align: center;
+	color: yellow;
+	font-size: 10vh;
+	font-weight: 100;
+	color: white;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+	
+	font-family: Arial, Helvetica, sans-serif;
+    color: gold;
+	font-weight: bold;
+	
+	
 	
 }
