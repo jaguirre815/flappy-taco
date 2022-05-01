@@ -5,14 +5,15 @@ let character = document.getElementById("character");
 let jumping = 0;
 let counter = 0;
 
+
 //pipes animaiton
 hole.addEventListener('animationiteration', () => {
-    let random = -((Math.random() * 300) + 150);
+    let random = -((Math.random(3) * 300) + 150);
     hole.style.top = random + "px";
     counter++;
     displayScore();
 });
-
+alert("click any key to jump")
 //gravity
 setInterval(function () {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
@@ -28,7 +29,7 @@ setInterval(function () {
     
 
 
-    if ((characterTop > 500) || ((blockLeft < 90) && (blockLeft > 10) && ((cTop < holeTop - 45) || (cTop > holeTop + 125)))) {
+    if ((characterTop > 420) || ((blockLeft < 90) && (blockLeft > 10) && ((cTop < holeTop - 45) || (cTop > holeTop + 125)))) {
         alert("You Are Dead Homie!");   
         character.style.top = 100 + "px";
         counter = 0;
@@ -37,6 +38,7 @@ setInterval(function () {
 }, 10  );
 
 function jump() {
+    character.src="./images/tacoman-1.png";
     jumping = 1;
     let jumpCount = 0;
     let jumpInterval = setInterval(function () {
@@ -48,16 +50,20 @@ function jump() {
             clearInterval(jumpInterval);
             jumping = 0;
             jumpCount = 0;
+            character.src="./images/tacoman.png";
         }
         jumpCount++;
-    }, 10      );
+    }, 10         );
 }                    
 function displayScore() {
     document.getElementById('score').innerText = counter;  
 }
 
+
+
 let audio = new Audio('audio/Intro-Theme.mp3');
 audio.play();
+
 
 
 
