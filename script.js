@@ -4,6 +4,7 @@ let hole = document.getElementById("hole");
 let character = document.getElementById("character");
 let jumping = 0;
 let counter = 0;
+let sound = new Audio("./audio/Intro-Theme.mp3");
 
 
 //pipes animaiton
@@ -12,15 +13,16 @@ hole.addEventListener('animationiteration', () => {
     hole.style.top = random + "px";
     counter++;
     displayScore();
+    sound.play();
 });
-alert("click any key to jump")
+alert("click OK to Start Game\nPress any key to jump")
 //gravity
 setInterval(function () {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     if (jumping == 0) {
         character.style.top = (characterTop + 3) + "px";
     }
-
+    
 
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     let holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
@@ -30,12 +32,13 @@ setInterval(function () {
 
 
     if ((characterTop > 420) || ((blockLeft < 90) && (blockLeft > 10) && ((cTop < holeTop - 45) || (cTop > holeTop + 125)))) {
-        alert("You Are Dead Homie!");   
+        alert("You Are Dead Homie!\nClick Ok to Restart\nScore:"+ counter );   
         character.style.top = 100 + "px";
         counter = 0;
-        displayScore();    
+        displayScore();
     }
 }, 10  );
+    
 
 function jump() {
     character.src="./images/tacoman-1.png";
@@ -61,8 +64,7 @@ function displayScore() {
 
 
 
-let audio = new Audio('audio/Intro-Theme.mp3');
-audio.play();
+
 
 
 
